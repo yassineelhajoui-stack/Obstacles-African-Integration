@@ -1,0 +1,22 @@
+BASES DE DONNÉES CORRIGÉES – révision du manuscrit (octobre 2026)
+
+Structure identique au dossier « data » d'origine : ACP/, modeles_intra/ (9 fichiers), modeles_extra/ (9 fichiers).
+Mêmes noms de fichiers. Chaque fichier contient une feuille « Notes_corrections ».
+
+1) 18 bases bilatérales (modeles_intra, modeles_extra)
+   - Colonnes d'indices d'origine supprimées : I_GOV, I_IDF, I_IPI, I_IFC, I_infra (et variantes I_GOV_O_, I_IPI_d__, I_infra_O_...).
+     Elles contenaient des signes inversés (multipliés par -1), des colonnes mal alignées et des valeurs manquantes remplacées par 0.
+   - Remplacées par les indices recalculés par ACP (identiques à la feuille ACP d'ACP.xlsx),
+     suffixe _o = pays i (iso3_o), _d = pays j (iso3_d ; bases intra seulement).
+   - Valeurs manquantes des indices laissées vides.
+   - Colonnes ajoutées (tests de robustesse) : I_GOVnoFDI, I_IDFnoCBDB, I_IFCcost, I_IFCtime, I_infraICT,
+     I_GOV_eq, I_IDF_eq, I_IFC_eq, I_infra_eq, I_IPI_eq, et les retards I_xxxL1, I_xxxL3.
+   - ZLECAF renommé ZLECAF_ dans les bases extra ; lignes sans code pays supprimées (1 ligne vide dans afric_intra).
+   - Toutes les autres colonnes sont inchangées.
+
+2) ACP/ACP.xlsx
+   - Feuilles GOV, IFC, INFRA, IPI : code de Maurice corrigé (« MRT » -> « MUS »).
+   - Feuille GOV : en-tête placé en ligne 1 (les 12 lignes vides du haut sont supprimées).
+   - Nouvelle feuille « indices_pays_annee » : les 5 indices, les indices alternatifs et les retards, par pays et année.
+
+Ces bases sont celles utilisées pour tous les résultats du manuscrit révisé (code : code_reproduction.zip).

@@ -1,0 +1,6 @@
+pandas>=2.2
+numpy>=1.26
+scipy>=1.11
+pyfixest>=0.60
+openpyxl>=3.1
+pyarrow>=15

@@ -1,0 +1,9 @@
+# Résultats régénérés par run_all.py
+resultats/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+~$*.xlsx
+~$*.docx
+.DS_Store
+Thumbs.db
