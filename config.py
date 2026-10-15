@@ -1,19 +1,16 @@
 # -*- coding: utf-8 -*-
 """Paramètres communs : chemins des données et des résultats.
 
-Modifiez DATA_DIR pour pointer vers le dossier des BASES CORRIGÉES (« data_corrigee »,
-qui contient les sous-dossiers ACP, modeles_intra et modeles_extra), ou définissez la
-variable d'environnement DATA_DIR avant d'exécuter les scripts.
-Ces bases contiennent déjà les indices vérifiés : aucune étape de correction n'est nécessaire.
+Les données sont lues dans le dossier « data » placé à côté du code (sous-dossiers ACP,
+modeles_intra et modeles_extra). Pour utiliser un autre emplacement, définissez la variable
+d'environnement DATA_DIR avant d'exécuter les scripts.
 """
 import os
 from pathlib import Path
 
 _HERE = Path(__file__).resolve().parent
-# Ordre de recherche : variable d'environnement DATA_DIR, puis dossier « data_corrigee »
-# placé à côté du code (structure du dépôt GitHub), puis chemin local de l'auteur.
-_CANDIDATS = [_HERE / "data_corrigee", _HERE.parent / "data_corrigee",
-              Path(r"D:\doctora-11-\woord\article 3\word\article finale\african developpment banqke\data\data_corrigee")]
+# Ordre de recherche : variable d'environnement DATA_DIR, puis dossier « data » placé à côté du code.
+_CANDIDATS = [_HERE / "data", _HERE.parent / "data"]
 DATA_DIR = Path(os.environ["DATA_DIR"]) if "DATA_DIR" in os.environ else next(
     (p for p in _CANDIDATS if p.exists()), _CANDIDATS[0])
 OUT_DIR = Path(os.environ.get("OUT_DIR", Path(__file__).resolve().parent / "resultats"))

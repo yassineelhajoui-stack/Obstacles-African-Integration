@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """Étape 4 : modèles de gravité augmentés des cinq indices (18 modèles).
 
-- Tableau 6 : Afrique, intra et extra, sans effets fixes (spec. A, version précédente avec indices
-  corrigés) et avec effets fixes pays + année (spec. B, spécification principale).
+- Tableau 6 : Afrique, intra et extra, sans effets fixes (spec. A) et avec effets fixes pays + année (spec. B, spécification principale).
 - Tableaux A4 et A5 : 16 modèles par CER (spec. B).
 """
 from common import *

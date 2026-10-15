@@ -6,9 +6,9 @@ Produit :
   - Tableau A3 (saturations des deux premières composantes)
   - deux vérifications :
       a) les scores recalculés sont identiques aux indices de la feuille indices_pays_annee ;
-      b) les indices contenus dans les 18 bases corrigées sont identiques à ce panel.
+      b) les indices contenus dans les 18 bases bilatérales sont identiques à ce panel.
 
-Les bases corrigées contiennent déjà les indices ; cette étape ne modifie aucune donnée.
+Les bases bilatérales contiennent déjà les indices ; cette étape ne modifie aucune donnée.
 """
 import numpy as np
 import pandas as pd

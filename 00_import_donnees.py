@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Étape 0 : conversion des 18 bases corrigées et du panel des indices (feuille indices_pays_annee
+"""Étape 0 : conversion des 18 bases bilatérales et du panel des indices (feuille indices_pays_annee
 d'ACP.xlsx) en Parquet, pour une lecture plus rapide."""
 import pandas as pd
 from config import DATA_DIR, PQ_DIR, ACP_FILE, INTRA_FILES, EXTRA_FILES

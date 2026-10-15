@@ -74,7 +74,7 @@ def _standardise(d):
 
 
 def load_raw(kind, rec):
-    """Base bilatérale corrigée (les indices vérifiés y sont déjà inclus)."""
+    """Base bilatérale (les indices ACP y sont déjà inclus)."""
     name = (INTRA_FILES if kind == 'intra' else EXTRA_FILES)[rec]
     return _standardise(pd.read_parquet(PQ_DIR / f"{name}.parquet"))
 
@@ -91,7 +91,7 @@ def country_year():
 
 
 def load(kind, rec):
-    """Échantillon bilatéral utilisé dans toutes les estimations (bases corrigées)."""
+    """Échantillon bilatéral utilisé dans toutes les estimations."""
     return load_raw(kind, rec)
 
 
@@ -126,9 +126,9 @@ def country_fe(d, kind):
 
 def estimate(kind, d, spec='B', vars_=None, rec='AFRIC', aug=True, y='TRD_Mll', vcov=None):
     """Estimation PPML.
-    spec 'A' : sans effets fixes (spécification de la version précédente)
+    spec 'A' : sans effets fixes
     spec 'Y' : effets fixes année
-    spec 'B' : effets fixes pays + année (spécification principale du manuscrit révisé)
+    spec 'B' : effets fixes pays + année (spécification principale du manuscrit)
     spec 'P' : effets fixes paire + année (variables bilatérales invariantes retirées)
     Erreurs-types regroupées par paire (par défaut).
     """
